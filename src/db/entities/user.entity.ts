@@ -1,21 +1,14 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({ name: 'task' })
-export class TaskEntity {
+@Entity({ name: 'user' })
+export class UserEntity {
 
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column({ type: "varchar" })
-  title: string
+  username: string
 
-  @Column({ type: "varchar" })
-  description: string
-
-  @Column({ type: "varchar" })
-  status: string
-
-  @Column({ type: "timestamptz", name: "expiration_date" })
-  expirationDate: Date
-
+  @Column({ type: "varchar", name: "password_hash" })
+  passwordHash: string
 }
